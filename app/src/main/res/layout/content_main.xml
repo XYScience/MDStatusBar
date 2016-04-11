@@ -21,13 +21,13 @@
         android:id="@+id/image_transparent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Image NO Transparent"/>
+        android:text="Image Transparent"/>
 
     <Button
         android:id="@+id/image_translucent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Image Transparent"/>
+        android:text="Image Translucent"/>
 
     <Button
         android:id="@+id/toolbar_tabLayout"
