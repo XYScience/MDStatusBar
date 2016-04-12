@@ -32,19 +32,19 @@ public class ImageTranslucentActivity extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-            getWindow().setStatusBarColor(Color.parseColor("#30000000"));
+            getWindow().setStatusBarColor(Color.parseColor("#33000000"));
         } else {
             ViewGroup contentView = (ViewGroup) findViewById(android.R.id.content);
             View statusBarView = contentView.getChildAt(0);
             //改变颜色时避免重复添加statusBarView
             if (statusBarView != null && statusBarView.getMeasuredHeight() == getStatusBarHeight(this)) {
-                statusBarView.setBackgroundColor(Color.parseColor("#30000000"));
+                statusBarView.setBackgroundColor(Color.parseColor("#33000000"));
                 return;
             }
             statusBarView = new View(this);
             ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     getStatusBarHeight(this));
-            statusBarView.setBackgroundColor(Color.parseColor("#30000000"));
+            statusBarView.setBackgroundColor(Color.parseColor("#33000000"));
             contentView.addView(statusBarView, lp);
         }
     }
