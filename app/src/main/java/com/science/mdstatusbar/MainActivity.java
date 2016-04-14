@@ -1,7 +1,6 @@
 package com.science.mdstatusbar;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -14,7 +13,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
@@ -28,10 +26,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
-            ViewGroup contentLayout = (ViewGroup) findViewById(android.R.id.content);
-            contentLayout.getChildAt(0).setFitsSystemWindows(false);
-        }
+        MDStatusBarCompat.setDrawerToolbar(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

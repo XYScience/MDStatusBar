@@ -1,6 +1,5 @@
 package com.science.mdstatusbar;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
@@ -38,10 +37,7 @@ public class DrawerToolbarTabLayoutActivity extends AppCompatActivity {
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
-            drawer.setFitsSystemWindows(false);
-            mCoordinatorLayout.setFitsSystemWindows(true);
-        }
+        MDStatusBarCompat.setDrawerToolbarTabLayout(this, mCoordinatorLayout);
 
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
         mTabLayout.addTab(mTabLayout.newTab().setText("tab1"));
